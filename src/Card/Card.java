@@ -1,21 +1,26 @@
 package Card;
 
 public class Card {
-    private enum Suit {
+    public Card(){
+
+    }
+
+    //variables
+    protected enum Suit {
         SPADES,
         HEARTS,
         DIAMONDS,
         CLUBS;
     }
 
-    private enum Rank {
+    protected enum Rank {
         TWO,
         THREE,
         FOUR,
         FIVE,
         SIX,
         SEVEN,
-        EIGHT,
+    EIGHT,
         NINE,
         TEN,
         JACK,
