@@ -1,32 +1,15 @@
 package Card;
 
-public class Card {
-    public Card(){
+import DeckOfCards.DeckOfCards;
 
-    }
+public class Card {
 
     //variables
-    protected enum Suit {
-        SPADES,
-        HEARTS,
-        DIAMONDS,
-        CLUBS;
+    private enum Suit{
+
     }
 
-    protected enum Rank {
-        TWO,
-        THREE,
-        FOUR,
-        FIVE,
-        SIX,
-        SEVEN,
-    EIGHT,
-        NINE,
-        TEN,
-        JACK,
-        QUEEN,
-        KING,
-        ACE;
+    private enum Rank {
     }
 
     private Suit cardSuite;
