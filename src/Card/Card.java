@@ -4,27 +4,19 @@ import DeckOfCards.DeckOfCards;
 
 public class Card {
 
-    //variables
-    private enum Suit{
+    private String cardSuit;
+    private String cardRank;
 
-    }
-
-    private enum Rank {
-    }
-
-    private Suit cardSuite;
-    private Rank cardRank;
-
-    public Card(Suit newSuite, Rank newRank) {
-        this.cardSuite = newSuite;
+    public Card(String newSuit, String newRank) {
+        this.cardSuit = newSuit;
         this.cardRank = newRank;
     }
 
-    public Suit getSuit() {
-        return cardSuite;
+    public String getCardSuit() {
+        return cardSuit;
     }
 
-    public Rank getRank() {
+    public String getCardRank() {
         return cardRank;
     }
 
