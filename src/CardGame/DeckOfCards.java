@@ -34,7 +34,7 @@ public class DeckOfCards{
             "ACE"
     };
 
-    //methods
+    //Constructor
     public DeckOfCards() {
         deckRandomizer = new Random();
         cardPulled = new ArrayList<Card>();
@@ -42,6 +42,7 @@ public class DeckOfCards{
         newDeck();
     }
 
+    //methods
     public void newDeck() {
         cardPulled.clear();
         Deck.clear();
@@ -93,11 +94,99 @@ public class DeckOfCards{
         Collections.shuffle(cardPulled);
     }
 
-    public ArrayList<Card> searchCardInDeckBySuit(String searchSuit){
+    public void searchCardInDeck(String searchSuit, String searchRank){
+            ArrayList<Card> result = Deck.stream()
+                    .filter(item-> item.cardSuit.contains(searchSuit) && item.cardRank.contains(searchRank))
+                    .collect(Collectors.toCollection(ArrayList::new));
+
+            //result.forEach(System.out::println);
+        if(result.size() == 0)
+        {
+            System.out.println("No Card found in current DECK");
+        }
+        else {
+            result.forEach(card -> System.out.println("Found card " + card.getCardRank() + " " + card.getCardSuit()));
+        }
+
+    }
+
+    public void searchCardInDeckBySuit(String searchSuit){
         ArrayList<Card> result = Deck.stream()
                 .filter(item-> item.cardSuit.contains(searchSuit))
                 .collect(Collectors.toCollection(ArrayList::new));
 
-        result.forEach(System.out::println);
+        //result.forEach(System.out::println);
+        if(result.size() == 0)
+        {
+            System.out.println("No Cards found by suit in current DECK");
+        }
+        else {
+            result.forEach(card -> System.out.println("Found card " + card.getCardRank() + " " + card.getCardSuit()));
+        }
+
+    }
+
+    public void searchCardInDeckByRank(String searchRank){
+        ArrayList<Card> result = Deck.stream()
+                .filter(item-> item.cardRank.contains(searchRank))
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        //result.forEach(System.out::println);
+        if(result.size() == 0)
+        {
+            System.out.println("No Cards found by rank in current DECK");
+        }
+        else {
+            result.forEach(card -> System.out.println("Found card " + card.getCardRank() + " " + card.getCardSuit()));
+        }
+
+    }
+
+    public void searchCardInPulledDeck(String searchSuit, String searchRank){
+        ArrayList<Card> result = cardPulled.stream()
+                .filter(item-> item.cardSuit.contains(searchSuit) && item.cardRank.contains(searchRank))
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        //result.forEach(System.out::println);
+        if(result.size() == 0)
+        {
+            System.out.println("No Card found in current pulled DECK");
+        }
+        else {
+            result.forEach(card -> System.out.println("Found card " + card.getCardRank() + " " + card.getCardSuit()));
+        }
+
+    }
+
+    public void searchCardInPulledDeckBySuit(String searchSuit){
+        ArrayList<Card> result = cardPulled.stream()
+                .filter(item-> item.cardSuit.contains(searchSuit))
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        //result.forEach(System.out::println);
+        if(result.size() == 0)
+        {
+            System.out.println("No Card found by suit in current pulled DECK");
+        }
+        else {
+            result.forEach(card -> System.out.println("Found card " + card.getCardRank() + " " + card.getCardSuit()));
+        }
+
+    }
+
+    public void searchCardInPulledDeckByRank(String searchRank){
+        ArrayList<Card> result = cardPulled.stream()
+                .filter(item-> item.cardRank.contains(searchRank))
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        //result.forEach(System.out::println);
+        if(result.size() == 0)
+        {
+            System.out.println("No Card found by rank in current pulled DECK");
+        }
+        else {
+            result.forEach(card -> System.out.println("Found card " + card.getCardRank() + " " + card.getCardSuit()));
+        }
+
     }
 }
