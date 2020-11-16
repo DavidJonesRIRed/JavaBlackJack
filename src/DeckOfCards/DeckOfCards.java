@@ -5,6 +5,7 @@ import Card.Card;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Collections;
 
 public class DeckOfCards{
     //variables
@@ -67,7 +68,7 @@ public class DeckOfCards{
         return result;
     }
 
-    public Card getRandomLeaveInDeck() {
+    public Card pullRandomLeaveInDeck() {
         Card result = Deck.get(randomizeIntForDeck(0, Deck.size() - 1));
         return result;
     }
@@ -82,5 +83,13 @@ public class DeckOfCards{
         int result = cardPulled.size();
 
         return result;
+    }
+
+    public void shuffleDeck(){
+        Collections.shuffle(Deck);
+    }
+
+    public void shufflePulledDeck(){
+        Collections.shuffle(cardPulled);
     }
 }

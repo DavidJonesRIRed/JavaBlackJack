@@ -19,7 +19,15 @@ public class Main {
 
         System.out.println("Current pulled card amout is " + myDeck.currentAmountOfPulledCards());
 
-        Card randomCard = myDeck.getRandomLeaveInDeck();
+        Card randomCard = myDeck.pullRandomLeaveInDeck();
+
+        System.out.println(randomCard.getCardRank() + " of " + randomCard.getCardSuit());
+
+        System.out.println("Current deck size is " + myDeck.currentDeckSize());
+
+        System.out.println("Current pulled card amount is " + myDeck.currentAmountOfPulledCards());
+
+        randomCard = myDeck.pullRandomRemoveFromDeck();
 
         System.out.println(randomCard.getCardRank() + " of " + randomCard.getCardSuit());
 
