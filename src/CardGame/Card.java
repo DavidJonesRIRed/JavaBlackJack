@@ -1,11 +1,9 @@
-package Card;
-
-import DeckOfCards.DeckOfCards;
+package CardGame;
 
 public class Card {
 
-    private String cardSuit;
-    private String cardRank;
+    protected String cardSuit;
+    protected String cardRank;
 
     public Card(String newSuit, String newRank) {
         this.cardSuit = newSuit;

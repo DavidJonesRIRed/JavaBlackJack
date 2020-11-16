@@ -1,11 +1,11 @@
-package DeckOfCards;
+package CardGame;
 
-import Card.Card;
+import CardGame.Card;
 
-import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class DeckOfCards{
     //variables
@@ -91,5 +91,13 @@ public class DeckOfCards{
 
     public void shufflePulledDeck(){
         Collections.shuffle(cardPulled);
+    }
+
+    public ArrayList<Card> searchCardInDeckBySuit(String searchSuit){
+        ArrayList<Card> result = Deck.stream()
+                .filter(item-> item.cardSuit.contains(searchSuit))
+                .collect(Collectors.toCollection(ArrayList::new));
+
+        result.forEach(System.out::println);
     }
 }
